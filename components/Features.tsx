@@ -28,12 +28,13 @@ const Features = () => {
             <h2 className="bold-40 lg:bold-64">Our Features</h2>
           </div>
           <ul className="mt-10 grid gap-10 md:grid-cols-2 lg:mg-20 lg:gap-20">
-            {FEATURES.map((feature) => (
+            {FEATURES.map((feature, index) => (
               <FeatureItem 
-                key={feature.title}
+                key={index}
                 title={feature.title} 
                 icon={feature.icon}
                 description={feature.description}
+                variant={feature.variant}
               />
             ))}
           </ul>
@@ -47,12 +48,13 @@ type FeatureItem = {
   title: string;
   icon: string;
   description: string;
+  variant: string;
 }
 
-const FeatureItem = ({ title, icon, description }: FeatureItem) => {
+const FeatureItem = ({ title, icon, description, variant }: FeatureItem) => {
   return (
     <li className="flex w-full flex-1 flex-col items-start">
-      <div className="rounded-full p-4 lg:p-7 bg-green-50">
+      <div className={`bg-${variant}-50 rounded-full p-4 lg:p-7`}>
         <Image src={icon} alt="map" width={28} height={28} />
       </div>
       <h2 className="bold-20 lg:bold-32 mt-5 capitalize">
