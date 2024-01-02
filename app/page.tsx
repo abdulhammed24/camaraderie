@@ -4,7 +4,6 @@ import GetApp from "@/components/GetApp";
 import Guide from "@/components/Guide";
 import Hero from "@/components/Hero";
 
-import 'tailwindcss/tailwind.css'
 
 export default function Home() {
   return (
